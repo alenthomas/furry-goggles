@@ -1,0 +1,36 @@
+/*
+.element {
+  transition: opacity 300ms ease-in-out 1s;
+}
+*/
+
+/*
+@keyframes [name] {
+  from {
+    [styles];
+  }
+  to {
+    [styles];
+  }
+}
+*/
+
+.container {
+    display: flex;
+    .parent {
+	margin: 0 auto;
+	overflow: hidden;
+	transform: translate3d(0, 0, 0);
+	.feed {
+	    width: 100%;
+	    border: 1px solid slateblue;
+	    animation: slideFeed 10s linear infinite;
+	}
+    }
+}
+
+@keyframes slideFeed {
+    100% {
+	transform: translateY(1000%);
+    }
+}
