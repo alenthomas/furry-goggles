@@ -20,17 +20,112 @@
     .parent {
 	margin: 0 auto;
 	overflow: hidden;
-	transform: translate3d(0, 0, 0);
+	height: 500px;
+	border: 1px dotted slategray;
 	.feed {
-	    width: 100%;
+	    position: absolute;
+	    top: 0px;
+	    left: 0px;
+	    width: 200px;
 	    border: 1px solid slateblue;
+	    padding: 5px;
 	    animation: slideFeed 10s linear infinite;
 	}
     }
 }
 
 @keyframes slideFeed {
+    0% {
+	transform: translateY(100%)
+    }
     100% {
-	transform: translateY(1000%);
+	transform: translateY(-1000%);
     }
 }
+
+
+@keyframes scroll {
+    0% { transform: translateY(0%); }
+    100% { transform: translateY(-1000%); }
+}
+
+.scroller {
+    width: 100px;
+    padding: 20px;
+    overflow-y: hidden;
+}
+
+.wrapper {
+    animation: scroll 10s linear infinite;
+}
+
+.card {
+    width: 100%;
+    height: 200px;
+    text-align: center;
+    border: 1px solid slategray;
+    border-radius: 5px;
+}
+
+
+.marquee {
+  background-color: #ddd;
+  width: 500px;
+  margin: 0 auto;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.marquee span {
+  display: inline-block;
+  font-size: 20px;
+  position: relative;
+  left: 100%;
+  animation: marquee 8s linear infinite;
+}
+.marquee:hover span {
+  animation-play-state: paused;
+}
+
+.marquee span:nth-child(1) {
+  animation-delay: 0s;
+}
+.marquee span:nth-child(2) {
+  animation-delay: 0.8s;
+}
+.marquee span:nth-child(3) {
+  animation-delay: 1.6s;
+}
+.marquee span:nth-child(4) {
+  animation-delay: 2.4s;
+}
+.marquee span:nth-child(5) {
+  animation-delay: 3.2s;
+}
+
+@keyframes marquee {
+  0%   { left: 100%; }
+  100% { left: -100%; }
+}
+
+.main {
+    height: 100px;
+    width: 100px;
+    border: 1px solid slateblue;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 20px;
+    p {
+	position: absolute;
+	top: 100px;
+	animation: slide-top 16s linear infinite;  
+
+    }
+}
+
+@keyframes slide-top {
+    0% { transform: translateY(100%); }
+    100% { transform: translateY(-1000%); }
+}
+
